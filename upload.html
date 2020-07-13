@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登录</title>
+    <title>上传</title>
     <link rel="stylesheet" href="libraries/bootstrap-4.5.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="libraries/FlexHelper/FlexHelper.css">
     <link rel="stylesheet" href="css/universal.css">
-    <link rel="stylesheet" href="css/register_login.css">
+    <link rel="stylesheet" href="css/upload_edit.css">
     <script src="libraries/jQuery/jquery-3.5.1.js"></script>
     <script src="libraries/bootstrap-4.5.0-dist/js/bootstrap.js"></script>
+    <script src="js/class/UploadPage.class.js"></script>
+    <script src="js/upload.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,19 +49,33 @@
     </div>
 </nav>
 
-<main class="card">
-    <h4 class="card-header">登录</h4>
-    <form class="card-body flex-container">
-        <label class="flex-1">用户名</label>
-        <input type="text" name="username" class="flex-1 form-control">
-        <label class="flex-1">密码</label>
-        <input type="password" name="password" class="flex-1 form-control">
-        <label class="flex-1">验证码</label>
-        <input type="text" name="email" class="flex-1 form-control">
-        <button type="submit" class="btn btn-info flex-1">登录</button>
+<main class="flex-container">
+    <div class="card flex-1">
+        <div class="card-header">
+            上传图片
+        </div>
+        <form class="card-body flex-container" id="form">
+            <div id="photoPreviewArea" class="flex-1">
 
-    </form>
+            </div>
+            <input id="photoInput" type="file" name="photo" accept="image/jpeg,image/png,image/gif" class="flex-1">
+            <label class="flex-1">标题</label>
+            <input type="text" class="flex-1 form-control" name="title">
+            <label class="flex-1">主题</label>
+            <input type="text" class="flex-1 form-control" name="theme">
+            <label class="flex-1">描述</label>
+            <input type="text" class="flex-1 form-control" name="desc">
+            <div class="flex-1 flex-container">
+                <select class="flex-8-24 form-control" name="country">
+                    <option value="">选择国家</option>
+                </select>
+                <select class="flex-8-24 form-control" name="city">
+                    <option value="">选择城市</option>
+                </select>
+            </div>
+            <button type="submit" class="flex-1 btn btn-info" id="submitButton">提交</button>
+        </form>
+    </div>
 </main>
-
 </body>
 </html>

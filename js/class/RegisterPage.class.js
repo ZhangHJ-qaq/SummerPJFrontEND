@@ -145,11 +145,21 @@ class RegisterPageClass {
 
     setSubmitButtonOnClick() {
         let that = this;
-        this.submitButton.click(function () {
-            if (that.emailOK && that.passwordOK && that.usernameOK) {
-                alert("提交！")
-            } else {
-                alert("打回！")
+        this.submitButton.click(function (e) {
+            if(!that.usernameOK){
+                syalert.syopen("alertUsername");
+                e.preventDefault();
+                return;
+            }
+            if(!that.emailOK){
+                syalert.syopen("alertEmail");
+                e.preventDefault();
+                return;
+            }
+            if(!that.passwordOK){
+                syalert.syopen("alertPassword");
+                e.preventDefault();
+                return;
             }
         })
 

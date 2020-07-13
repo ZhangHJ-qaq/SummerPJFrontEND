@@ -5,6 +5,8 @@
     <title>注册</title>
     <link rel="stylesheet" href="libraries/bootstrap-4.5.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="libraries/FlexHelper/FlexHelper.css">
+    <link rel="stylesheet" href="libraries/animate.css/animate.min.css">
+    <link rel="stylesheet" href="libraries/sysalert/syalert.min.css">
     <link rel="stylesheet" href="css/universal.css">
     <link rel="stylesheet" href="css/register_login.css">
     <script src="libraries/jQuery/jquery-3.5.1.js"></script>
@@ -14,7 +16,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Haojie的旅游图片分享站</a>
+    <a class="navbar-brand" href="#">
+        <img src="images/logo.JPG" style="width: 30px;height: 30px">
+        Haojie的旅游图片分享站
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,14 +27,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="#">主页</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">浏览</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">搜索</a>
+                <a class="nav-link" href="#">搜索</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -72,5 +74,19 @@
     </form>
 </main>
 
+<script src="libraries/sysalert/syalert.min.js"></script>
+
+<div class="sy-alert sy-alert-tips animated" sy-enter="zoomIn" sy-leave="zoomOut" sy-type="tips" sy-mask="false"
+     id="alertUsername">
+    <div class="sy-content">用户名必须是4-15位</div>
+</div>
+<div class="sy-alert sy-alert-tips animated" sy-enter="zoomIn" sy-leave="zoomOut" sy-type="tips" sy-mask="false"
+     id="alertEmail">
+    <div class="sy-content">邮箱格式不符合要求</div>
+</div>
+<div class="sy-alert sy-alert-tips animated" sy-enter="zoomIn" sy-leave="zoomOut" sy-type="tips" sy-mask="false"
+     id="alertPassword">
+    <div class="sy-content">密码必须为6-15位，且两次输入的密码必须一致！</div>
+</div>
 </body>
 </html>
